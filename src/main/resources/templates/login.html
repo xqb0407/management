@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+   <head>
+      
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>登录页面</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="images/favicon.ico" />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <!-- Typography CSS -->
+      <link rel="stylesheet" href="/css/typography.css">
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="/css/style.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+   </head>
+   <body>
+      <!-- loader Start -->
+     <div id="loading">
+         <div id="loading-center">
+         </div>
+      </div>
+      <!-- loader END -->
+        <!-- Sign in Start -->
+        <section class="sign-in-page">
+            <div class="container bg-white mt-5 p-0">
+                <div class="row no-gutters">
+                    <div class="col-sm-6 align-self-center">
+                        <div class="sign-in-from">
+                            <h1 class="mb-0">登录</h1>
+                            <p>请输入用户名密码登录</p>
+                            <form class="mt-4">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">用户名</label>
+                                    <input type="text" name="username" class="form-control mb-0 " id="exampleInputEmail1" placeholder="用户名">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">密码</label>
+                                    <a href="#" class="float-right">忘记密码</a>
+                                    <input type="password"  name="password" class="form-control mb-0  " id="exampleInputPassword1" placeholder="密码">
+                                </div>
+                                <div class="d-inline-block w-100">
+                                    <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">记住账号</label>
+                                    </div>
+                                    <button id="button1" type="button" class="btn btn-primary float-right">登录</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <div class="sign-in-detail text-white">
+                            <a class="sign-in-logo mb-5" style="font-size: 40px; color: white;" href="#">Herther</a>
+                            <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1" data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
+                                <div class="item">
+                                    <img src="/images/login/1.png" class="img-fluid mb-4" alt="logo">
+                                    <h4 class="mb-1 text-white">Herther</h4>
+                                    <p>高度的自律 | 及绝对的自由</p>
+                                </div>
+                                <div class="item">
+                                    <img src="/images/login/1.png" class="img-fluid mb-4" alt="logo">
+                                    <h4 class="mb-1 text-white">Herther</h4>
+                                    <p>高度的自律 | 及绝对的自由</p>
+                                </div>
+                                <div class="item">
+                                    <img src="/images/login/1.png" class="img-fluid mb-4" alt="logo">
+                                    <h4 class="mb-1 text-white">Herther</h4>
+                                    <p>高度的自律 | 及绝对的自由</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <!-- Appear JavaScript -->
+      <script src="/js/jquery.appear.js"></script>
+      <!-- Countdown JavaScript -->
+      <script src="/js/countdown.min.js"></script>
+      <!-- Counterup JavaScript -->
+      <script src="/js/waypoints.min.js"></script>
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Wow JavaScript -->
+      <script src="/js/wow.min.js"></script>
+      <!-- Apexcharts JavaScript -->
+      <script src="/js/apexcharts.min.js"></script>
+      <!-- Slick JavaScript -->
+      <script src="/js/slick.min.js"></script>
+      <!-- Select2 JavaScript -->
+      <script src="/js/select2.min.js"></script>
+      <!-- Owl Carousel JavaScript -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Magnific Popup JavaScript -->
+      <script src="/js/jquery.magnific-popup.min.js"></script>
+      <!-- Smooth Scrollbar JavaScript -->
+      <script src="/js/smooth-scrollbar.js"></script>
+      <!-- Chart Custom JavaScript -->
+      <!-- <script src="js/chart-custom.js"></script> -->
+      <!-- Custom JavaScript -->
+      <script src="/js/custom.js"></script>
+   </body>
+</html>
+<script>
+
+    $('#button1').click(function () {
+        var username = $("input[name='username']").val();
+        var password = $("input[name='password']").val();
+        $.post("/LoginManager",{
+            username:username,
+            password:password
+        },
+            function (result) {
+                if (result.static==200){
+                        console.log(result);
+                }else {
+                    console.log("登录失败")
+                }
+            }
+        );
+    });
+</script>
