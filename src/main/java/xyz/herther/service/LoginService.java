@@ -4,5 +4,5 @@ import xyz.herther.pojo.TbAdmin;
 
 
 public interface LoginService {
-    TbAdmin login(String username , String passowrd);   //登录接口
+    TbAdmin login(String username,String password);   //登录接口
 }

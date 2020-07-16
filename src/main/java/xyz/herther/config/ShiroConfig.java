@@ -1,5 +1,6 @@
 package xyz.herther.config;
 
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -37,8 +38,9 @@ public class ShiroConfig {
          */
         LinkedHashMap map = new LinkedHashMap<String,String>();
         FilterFactoryBean.setFilterChainDefinitionMap(map);
+        map.put("/LoginManager", "anon");
+        map.put("/GoIndex", "anon");
         map.put("/*", "authc");
-
         FilterFactoryBean.setLoginUrl("/tologin");
         return FilterFactoryBean;
     }
@@ -62,5 +64,15 @@ public class ShiroConfig {
     @Bean(name="userReaml")
     public UserReaml getReaml(){
         return new UserReaml();
+    }
+
+    /**
+     * 配置ShiroDialect，用与thymeleaf和shiro配合使用
+     * @return
+     */
+
+    @Bean
+    public ShiroDialect getShiroDialect(){
+        return new ShiroDialect();
     }
 }

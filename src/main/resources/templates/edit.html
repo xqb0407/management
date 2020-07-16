@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Vito - Responsive Bootstrap 4 Admin Dashboard Template</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="images/favicon.ico" />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Typography CSS -->
+      <link rel="stylesheet" href="css/typography.css">
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="css/responsive.css">
+       <link href="/css/iconfont.css" rel="stylesheet">
+   </head>
+   <body>
+      <!-- loader Start -->
+      <div id="loading">
+         <div id="loading-center">
+         </div>
+      </div>
+		<script src="js/include.js"></script>
+		  <include src="side.html"></include>
+		<include src="top.html"></include>
+         
+        
+         <!-- Page Content  -->
+         <div id="content-page" class="content-page">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="iq-card">
+                        <div class="iq-card-body p-0">
+                           <div class="iq-edit-list">
+                              <ul class="iq-edit-profile d-flex nav nav-pills">
+                                 <li class="col-md-3 p-0">
+                                    <a class="nav-link active" data-toggle="pill" href="#personal-information">
+                                       个人信息
+                                    </a>
+                                 </li>
+                                 <li class="col-md-3 p-0">
+                                    <a class="nav-link" data-toggle="pill" href="#chang-pwd">
+                                       修改密码
+                                    </a>
+                                 </li>
+                                
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-12">
+                     <div class="iq-edit-list-data">
+                        <div class="tab-content">
+                           <div class="tab-pane fade active show" id="personal-information" role="tabpanel">
+                               <div class="iq-card">
+                                 <div class="iq-card-header d-flex justify-content-between">
+                                    <div class="iq-header-title">
+                                       <h4 class="card-title">修改个人信息</h4>
+                                    </div>
+                                 </div>
+                                 <div class="iq-card-body">
+                                    <form>
+                                       <div class="form-group row align-items-center">
+                                          <div class="col-md-12">
+                                             <div class="profile-img-edit">
+                                                <img class="profile-pic" src="images/user/11.png" alt="profile-pic">
+                                                <div class="p-image">
+                                                  <i class="ri-pencil-line upload-button"></i>
+                                                  <input class="file-upload" type="file" accept="image/*"/>
+                                               </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class=" row align-items-center">
+                                          <div class="form-group col-sm-6">
+                                             <label for="fname">名字：</label>
+                                             <input type="text" class="form-control" id="fname" value="Herther">
+                                          </div>
+                                          
+                                          <div class="form-group col-sm-6">
+                                             <label for="uname">用户名</label>
+                                             <input type="text" class="form-control" id="uname" value="admin">
+                                          </div>
+                                          
+										  <div class="form-group col-sm-6">
+										     <label for="cname">邮箱</label>
+										     <input type="email" class="form-control" id="cname" value="34675628@qq.com">
+										  </div>
+										  <div class="form-group col-sm-6">
+										     <label for="cname">电话</label>
+										     <input type="phone" class="form-control" id="cname" value="13110787392">
+										  </div>
+                                          <div class="form-group col-sm-6">
+                                             <label class="d-block">性别</label>
+                                             <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="customRadio6" name="customRadio1" class="custom-control-input" checked="">
+                                                <label class="custom-control-label" for="customRadio6"> 男 </label>
+                                             </div>
+                                             <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="customRadio7" name="customRadio1" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio7"> 女 </label>
+                                             </div>
+                                          </div>
+                                          
+                                         
+                                          
+                                          <div class="form-group col-sm-12">
+                                             <label>地址</label>
+                                             <textarea class="form-control" name="address" rows="5" style="line-height: 22px;">
+福建省福州市融侨锦江悦府
+
+                                             </textarea>
+                                          </div>
+                                       </div>
+                                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                       <button type="reset" class="btn iq-bg-danger">Cancle</button>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="chang-pwd" role="tabpanel">
+                               <div class="iq-card">
+                                 <div class="iq-card-header d-flex justify-content-between">
+                                    <div class="iq-header-title">
+                                       <h4 class="card-title">Change Password</h4>
+                                    </div>
+                                 </div>
+                                 <div class="iq-card-body">
+                                    <form>
+                                       <div class="form-group">
+                                          <label for="cpass">Current Password:</label>
+                                          <a href="javascripe:void();" class="float-right">Forgot Password</a>
+                                             <input type="Password" class="form-control" id="cpass" value="">
+                                          </div>
+                                       <div class="form-group">
+                                          <label for="npass">New Password:</label>
+                                          <input type="Password" class="form-control" id="npass" value="">
+                                       </div>
+                                       <div class="form-group">
+                                          <label for="vpass">Verify Password:</label>
+                                             <input type="Password" class="form-control" id="vpass" value="">
+                                       </div>
+                                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                       <button type="reset" class="btn iq-bg-danger">Cancle</button>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="emailandsms" role="tabpanel">
+                               <div class="iq-card">
+                                 <div class="iq-card-header d-flex justify-content-between">
+                                    <div class="iq-header-title">
+                                       <h4 class="card-title">Email and SMS</h4>
+                                    </div>
+                                 </div>
+                                 <div class="iq-card-body">
+                                    <form>
+                                       <div class="form-group row align-items-center">
+                                          <label class="col-md-3" for="emailnotification">Email Notification:</label>
+                                          <div class="col-md-9 custom-control custom-switch">
+                                             <input type="checkbox" class="custom-control-input" id="emailnotification" checked="">
+                                             <label class="custom-control-label" for="emailnotification"></label>
+                                          </div>
+                                       </div>
+                                       <div class="form-group row align-items-center">
+                                          <label class="col-md-3" for="smsnotification">SMS Notification:</label>
+                                          <div class="col-md-9 custom-control custom-switch">
+                                             <input type="checkbox" class="custom-control-input" id="smsnotification" checked="">
+                                             <label class="custom-control-label" for="smsnotification"></label>
+                                          </div>
+                                       </div>
+                                       <div class="form-group row align-items-center">
+                                          <label class="col-md-3" for="npass">When To Email</label>
+                                          <div class="col-md-9">
+                                             <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="email01">
+                                                <label class="custom-control-label" for="email01">You have new notifications.</label>
+                                             </div>
+                                             <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="email02">
+                                                <label class="custom-control-label" for="email02">You're sent a direct message</label>
+                                             </div>
+                                             <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="email03" checked="">
+                                                <label class="custom-control-label" for="email03">Someone adds you as a connection</label>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="form-group row align-items-center">
+                                          <label class="col-md-3" for="npass">When To Escalate Emails</label>
+                                          <div class="col-md-9">
+                                             <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="email04">
+                                                <label class="custom-control-label" for="email04"> Upon new order.</label>
+                                             </div>
+                                             <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="email05">
+                                                <label class="custom-control-label" for="email05"> New membership approval</label>
+                                             </div>
+                                             <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="email06" checked="">
+                                                <label class="custom-control-label" for="email06"> Member registration</label>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                       <button type="reset" class="btn iq-bg-danger">Cancle</button>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="manage-contact" role="tabpanel">
+                               <div class="iq-card">
+                                 <div class="iq-card-header d-flex justify-content-between">
+                                    <div class="iq-header-title">
+                                       <h4 class="card-title">Manage Contact</h4>
+                                    </div>
+                                 </div>
+                                 <div class="iq-card-body">
+                                    <form>
+                                       <div class="form-group">
+                                          <label for="cno">Contact Number:</label>
+                                          <input type="text" class="form-control" id="cno" value="001 2536 123 458">
+                                       </div>
+                                       <div class="form-group">
+                                          <label for="email">Email:</label>
+                                          <input type="text" class="form-control" id="email" value="nikjone@demo.com">
+                                       </div>
+                                       <div class="form-group">
+                                          <label for="url">Url:</label>
+                                          <input type="text" class="form-control" id="url" value="https://getbootstrap.com">
+                                       </div>
+                                       <button type="submit" class="btn btn-primary mr-2">提交</button>
+                                       <button type="reset" class="btn iq-bg-danger">重置</button>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+   
+     <include src="Footer.html"></include>
+      <!-- Footer END -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Appear JavaScript -->
+      <script src="js/jquery.appear.js"></script>
+      <!-- Countdown JavaScript -->
+      <script src="js/countdown.min.js"></script>
+      <!-- Counterup JavaScript -->
+      <script src="js/waypoints.min.js"></script>
+      <script src="js/jquery.counterup.min.js"></script>
+      <!-- Wow JavaScript -->
+      <script src="js/wow.min.js"></script>
+      <!-- Apexcharts JavaScript -->
+      <script src="https://cdn.bootcdn.net/ajax/libs/apexcharts/3.11.0/apexcharts.min.js"></script>
+      <!-- Slick JavaScript -->
+      <script src="js/slick.min.js"></script>
+      <!-- Select2 JavaScript -->
+      <script src="js/select2.min.js"></script>
+      <!-- Owl Carousel JavaScript -->
+      <script src="js/owl.carousel.min.js"></script>
+      <!-- Magnific Popup JavaScript -->
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <!-- Smooth Scrollbar JavaScript -->
+      <script src="js/smooth-scrollbar.js"></script>
+      <!-- lottie JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.8/lottie.js"></script>
+      <!-- Chart Custom JavaScript -->
+      <script src="js/chart-custom.js"></script>
+      <!-- Custom JavaScript -->
+      <script src="js/custom.js"></script>
+   </body>
+</html>

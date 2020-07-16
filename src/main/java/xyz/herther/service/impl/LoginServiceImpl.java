@@ -16,11 +16,7 @@ public class LoginServiceImpl implements LoginService {
 
 
     @Override
-    public TbAdmin login(String username, String passowrd) {
-        TbAdminExample example = new TbAdminExample() ;
-        TbAdminExample.Criteria criteria = example.createCriteria();
-        criteria.andUsernameEqualTo(username);
-        TbAdmin tbAdmins = (TbAdmin) tbAdminMapper.selectByExample(example);
-        return tbAdmins;
+    public TbAdmin login(String username,String password) {
+       return null;
     }
 }

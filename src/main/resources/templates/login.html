@@ -15,7 +15,21 @@
       <link rel="stylesheet" href="/css/style.css">
       <!-- Responsive CSS -->
       <link rel="stylesheet" href="/css/responsive.css">
+       <style>
+           #div1{
+               position: absolute;
+               top: 580px;
+               left: 260px;
+               width: 400px;
+               display: none;
+               height: 50px;
+           }
+           #p1{
+               padding: 0px;
+           }
+       </style>
    </head>
+
    <body>
       <!-- loader Start -->
      <div id="loading">
@@ -25,13 +39,18 @@
       <!-- loader END -->
         <!-- Sign in Start -->
         <section class="sign-in-page">
+            <div  id="div1" class="alert alert-danger alert-dismissible" role="alert" >
+<!--                <p id="p1">错误信息</p>-->
+
+            </div>
             <div class="container bg-white mt-5 p-0">
+
                 <div class="row no-gutters">
                     <div class="col-sm-6 align-self-center">
                         <div class="sign-in-from">
                             <h1 class="mb-0">登录</h1>
                             <p>请输入用户名密码登录</p>
-                            <form class="mt-4">
+                            <form id="form1" class="mt-4">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">用户名</label>
                                     <input type="text" name="username" class="form-control mb-0 " id="exampleInputEmail1" placeholder="用户名">
@@ -80,49 +99,45 @@
       <script src="/js/jquery.min.js"></script>
       <script src="/js/popper.min.js"></script>
       <script src="/js/bootstrap.min.js"></script>
-      <!-- Appear JavaScript -->
       <script src="/js/jquery.appear.js"></script>
-      <!-- Countdown JavaScript -->
       <script src="/js/countdown.min.js"></script>
-      <!-- Counterup JavaScript -->
       <script src="/js/waypoints.min.js"></script>
       <script src="/js/jquery.counterup.min.js"></script>
-      <!-- Wow JavaScript -->
       <script src="/js/wow.min.js"></script>
-      <!-- Apexcharts JavaScript -->
       <script src="/js/apexcharts.min.js"></script>
-      <!-- Slick JavaScript -->
       <script src="/js/slick.min.js"></script>
-      <!-- Select2 JavaScript -->
       <script src="/js/select2.min.js"></script>
-      <!-- Owl Carousel JavaScript -->
       <script src="/js/owl.carousel.min.js"></script>
-      <!-- Magnific Popup JavaScript -->
       <script src="/js/jquery.magnific-popup.min.js"></script>
-      <!-- Smooth Scrollbar JavaScript -->
       <script src="/js/smooth-scrollbar.js"></script>
-      <!-- Chart Custom JavaScript -->
-      <!-- <script src="js/chart-custom.js"></script> -->
-      <!-- Custom JavaScript -->
       <script src="/js/custom.js"></script>
    </body>
 </html>
 <script>
 
     $('#button1').click(function () {
-        var username = $("input[name='username']").val();
-        var password = $("input[name='password']").val();
-        $.post("/LoginManager",{
-            username:username,
-            password:password
-        },
-            function (result) {
-                if (result.static==200){
-                        console.log(result);
-                }else {
-                    console.log("登录失败")
+        $.ajax({
+            url:'http://localhost:88/LoginManager',
+            data:$('#form1').serialize(),
+            type:'POST',
+            dataType:'json',
+            success:function (data) {
+                console.log(data);
+                if (data.code == 0){
+                    window.location.href="/index";
+                }else{
+                    $('#div1').attr("style","display:block;");
+                    console.log(data.msg);
+                    var msg =data.msg;
+                    var str = "";
+                    str+='<p id="p1">'+msg+'</p>';
+                    $('#div1').html(str);
+
                 }
+            },
+            error:function () {
+                console.log("请求失败");
             }
-        );
+        });
     });
 </script>
